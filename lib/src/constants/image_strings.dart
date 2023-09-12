@@ -9,3 +9,6 @@ const String tOnBoardingImage3 =
 const String tWelcomeScreenImage = "assets/images/welcome_images/chat-pana.png";
 
 const String tGoogleLogoImage = "assets/images/logo/google.png";
+
+// Sign Up Screen Text
+const String tForgetImg = "assets/images/forget/padlock.png";

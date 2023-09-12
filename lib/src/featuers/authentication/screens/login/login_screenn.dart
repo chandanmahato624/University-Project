@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:loogsite/src/constants/image_strings.dart';
 import 'package:loogsite/src/constants/sizes.dart';
 import 'package:loogsite/src/constants/text_strings.dart';
+
+import '../forget_password/forget_password_mail/forget_password_mail.dart';
+import 'login_form_widget.dart';
+import 'login_header_widget.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -17,64 +22,10 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image(
-                  image: AssetImage(tWelcomeScreenImage),
-                  height: size.height * 0.2,
-                ),
-                Text(tLoginTitle,
-                    style: Theme.of(context).textTheme.titleLarge),
-                Text(tLoginSubTitle,
-                    style: Theme.of(context).textTheme.bodySmall),
+                LoginHeaderWidget(size: size),
 
                 // section ---2 [from]
-                Form(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 20.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.person_outline_outlined),
-                            labelText: tEmail,
-                            hintText: tEmail,
-                            border: OutlineInputBorder(),
-                          ),
-                        ),
-                        const SizedBox(height: tFormHeight - 20),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.fingerprint),
-                            labelText: tPassword,
-                            hintText: tPassword,
-                            border: OutlineInputBorder(),
-                            suffixIcon: IconButton(
-                              onPressed: null,
-                              icon: Icon(Icons.remove_red_eye_sharp),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: tFormHeight - 20,
-                        ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: TextButton(
-                            onPressed: () {},
-                            child: const Text(tForgetPassword),
-                          ),
-                        ),
-                        SizedBox(
-                          width: double.infinity,
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            child: Text(tLogin.toUpperCase()),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                LoginForm(),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [

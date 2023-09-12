@@ -6,6 +6,7 @@ import 'package:loogsite/src/constants/sizes.dart';
 import 'package:loogsite/src/constants/text_strings.dart';
 
 import '../login/login_screenn.dart';
+import '../signup/signup_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -50,7 +51,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => const SignUpScreen()),
                     child: Text(tSignup.toUpperCase()),
                   ),
                 ),
